@@ -1,0 +1,42 @@
+nav {
+  display: flex;
+  color: white;
+  align-items: center;
+  background-color: #424040;
+  padding: 1rem;
+  list-style: none;
+}
+
+nav h1 {
+    display: flex;
+    justify-content:left;
+}
+
+nav h1  a logo{
+  color: rgb(136, 208, 200);
+}
+nav-link{
+  display: flex;
+  justify-content: right;
+}
+
+nav a {
+  justify-content:left;
+  text-decoration: none;
+  color: #ffffff;
+  border: 3px;
+  padding-right: 2px;
+  margin-left: 1rem;
+  text-align: right;
+}
+
+nav a:hover {
+  color: rgb(189, 249, 9);
+  border: bottom 3px;
+  border-bottom: #333;
+}
+nav a.active{
+  color:rgb(249, 181, 9);
+  border-bottom: 1px;
+  border-color: aliceblue;
+}
