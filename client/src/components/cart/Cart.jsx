@@ -53,6 +53,7 @@ const Cart = () => {
   };
   const server = "http://localhost:3001";
   return (
+    userid ?(
     <Container className="mt-5">
       <h2 className="mb-4">Shopping Cart</h2>
       {cartData.map((product) => (
@@ -87,6 +88,7 @@ const Cart = () => {
         Checkout
       </Button>
     </Container>
+  ) : (<h6 style={{alignItem: "center"}}>Please log in first to add product to cart</h6>)
   );
 };
 

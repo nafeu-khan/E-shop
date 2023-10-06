@@ -36,7 +36,8 @@ const Home = () => {
       <section className="banner text-center d-flex align-items-center">
         <Container className="bannerContainer">
           <div className="bannerContent">
-            <h2>Welcome to My E-commerce Store</h2>
+            <h2>Welcome to E-Shop</h2>
+            <h4 style={{color:"Aquamarine"}}>Country's Largest Electronics Shop</h4>
             <p>Discover our latest products and deals!</p>
             <Button
               variant="primary"

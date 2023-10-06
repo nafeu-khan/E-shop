@@ -1,2 +1,11 @@
 client/node_modules/
 server/node_modules/
+server/.env
+client/.env
+server/db.js
+server/.eslintrc.cjs
+client/.eslintrc.cjs
+client/.vscode
+server/.vscode
+client/.idea
+server/.idea

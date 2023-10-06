@@ -38,14 +38,21 @@ const Product = () => {
     event.preventDefault();
     try {
       const user_id = localStorage.getItem("userID");
+      if(user_id!=null){
       const product_id = id;
       const data = { product_id, user_id };
       const response = await addToCart(data);
-      console.log(response);
+      console.log(response)
       toast.success(response.message, {
         position: toast.POSITION.TOP_RIGHT,
       });
-    } catch (error) {
+    }
+    else {
+      toast.info("Please log in first", {
+        position: toast.POSITION.TOP_RIGHT,
+      });
+    }
+    }catch (error) {
       toast.error(error.response.data.error, {
         position: toast.POSITION.TOP_RIGHT,
       });

@@ -30,6 +30,7 @@ const ProductCard = ({ product }) => {
     event.preventDefault();
     try {
       const user_id = localStorage.getItem("userID");
+      if(user_id!=null){
       const product_id = id;
       const data = { product_id, user_id };
       const response = await addToCart(data);
@@ -37,6 +38,12 @@ const ProductCard = ({ product }) => {
       toast.success(response.message, {
         position: toast.POSITION.TOP_RIGHT,
       });
+    }
+    else {
+      toast.info("Please log in first", {
+        position: toast.POSITION.TOP_RIGHT,
+      });
+    }
     } catch (error){
       toast.error(error.response.data.error, {
         position: toast.POSITION.TOP_RIGHT,
@@ -46,7 +53,7 @@ const ProductCard = ({ product }) => {
   const productCard ={
     width: "50rem",
     maxWidth: "100%", 
-    height: "95%",
+    height: "98%",
     marginRight: "25px" 
   }
   return (

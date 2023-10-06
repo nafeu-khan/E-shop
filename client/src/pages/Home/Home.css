@@ -1,29 +1,35 @@
-.product-list-container {
+/* .product-list-container {
   display: flex;
   overflow-x: auto;
 }
 
 .product-card {
   margin-right: 10px; /* Adjust the margin as needed */
-}
-.product-card-body {
+/*} */
+/*.product-card-body {
   height: 230px; /* Set the fixed height for the product card body */
-  overflow: hidden; /* Hide overflow content if the product name is too long */
+/*  overflow: hidden; /* Hide overflow content if the product name is too long */
+/*}
+*/
+.banner {
+  width: 100vw; /* Set width to 100% of the viewport width */
+  height: 500px;
+  background-image: url('../../public/images/banner.png');
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  position: relative; /* Add position: relative; to ensure child elements are positioned relative to this container */
 }
-.bannerContainer {
-    height: 500px;
-    background-image: url(../../public/images/banner.png);
-    background-size: 100% 100%;
-    background-position: center;
-    background-size: cover;
-    position: absolute,
-  }
-.bannerContent{
-    position: absolute;
-    bottom: 28%;
-    left: 0;
-    right: 0;
-    text-align: center;
-    padding: 20px;
-    color: white
-  }
+.bannerContent {
+  position: absolute;
+  bottom: 28%;
+  left: 0;
+  right: 0;
+  text-align: center;
+  padding: 20px;
+  color: white;
+}
