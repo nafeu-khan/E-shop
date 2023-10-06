@@ -28,7 +28,8 @@ app.get("/", (req, res) => {
     message: "hi",
   });
 });
-
+// css caching remove
+app.use(express.static('public', { maxAge: 0 }));
 // error handing middleware
 app.use((req, res, next) => {
   return res.status(404).send({

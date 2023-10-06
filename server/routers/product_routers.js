@@ -9,6 +9,7 @@ const {
   getFromCart,
   removeFromCart,
   updateCart,
+  getFeatured,
 } = require("../controller/productController");
 const product_routers = express.Router();
 
@@ -34,6 +35,7 @@ product_routers.post(
 );
 product_routers.post("/create_category", createCategory);
 product_routers.get("/get_category", getCategory);
+product_routers.get("/featured_products", getFeatured);
 product_routers.get("/get_products", getProducts);
 product_routers.get("/get_product/:product_id", getProduct);
 product_routers.post("/add_to_cart",addToCart)

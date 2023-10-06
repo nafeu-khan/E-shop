@@ -1,0 +1,29 @@
+.product-list-container {
+  display: flex;
+  overflow-x: auto;
+}
+
+.product-card {
+  margin-right: 10px; /* Adjust the margin as needed */
+}
+.product-card-body {
+  height: 230px; /* Set the fixed height for the product card body */
+  overflow: hidden; /* Hide overflow content if the product name is too long */
+}
+.bannerContainer {
+    height: 500px;
+    background-image: url(../../public/images/banner.png);
+    background-size: 100% 100%;
+    background-position: center;
+    background-size: cover;
+    position: absolute,
+  }
+.bannerContent{
+    position: absolute;
+    bottom: 28%;
+    left: 0;
+    right: 0;
+    text-align: center;
+    padding: 20px;
+    color: white
+  }

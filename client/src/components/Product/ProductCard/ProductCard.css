@@ -1,0 +1,27 @@
+.product-list-container {
+  display: flex;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.product-card-body {
+  height: 230px; /* Set the fixed height for the product card body */
+  overflow: hidden; /* Hide overflow content if the product name is too long */
+}
+.productCard {
+  width: 18rem;
+  max-width: 100%; /* Set a maximum width for the card */
+  height: 100%; /* Set a fixed height for the card */
+  margin-right: 25px; /* Add spacing between cards */
+}
+
+.product-card .card-body {
+  flex-grow: 1; /* Allow the card body to expand and take available space */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.product-card .card-text {
+  margin-top: auto;
+}

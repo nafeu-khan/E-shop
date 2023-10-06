@@ -6,63 +6,8 @@ import { Link } from "react-router-dom";
 import env from "react-dotenv";
 import { addToCart } from "../../services/productService/ProductService";
 import { toast } from "react-toastify";
-import "./product.css";
-
-const ProductCard = ({ product }) => {
-  const {
-    id,
-    product_name,
-    product_slug,
-    product_category,
-    product_status,
-    product_left,
-    product_description,
-    product_price,
-    product_photo,
-  } = product;
-  const server = "http://localhost:3001";
-  const cardTitleStyle = {
-    fontSize: "12px",
-    // fontWeight: "bold", 
-  };
-  const cardStyle = {
-    // width: '17rem',
-    // height: '25rem', // Set the fixed height of the card
-    margin: '0rem',
-  };
-  const handleCard=async(event)=>{
-    event.preventDefault();
-    try {
-      const user_id = localStorage.getItem("userID");
-      const product_id = id;
-      const data = { product_id, user_id };
-      console.log("in p slider",id," ",user_id)
-      const response = await addToCart(data);
-      console.log(response)
-      toast.success(response.message, {
-        position: toast.POSITION.TOP_RIGHT,
-      });
-    } catch (error){
-      toast.error(error.response.data.error, {
-        position: toast.POSITION.TOP_RIGHT,
-      });
-    }
-  }
-  return (
-    <Card style={cardStyle}> 
-      <Card.Img
-        variant="top"
-        src={`${server}/${product_photo}`}
-        alt={product_name}
-      />
-      <Card.Body>
-        <Card.Title style={cardTitleStyle}>{product_name}</Card.Title>
-        <Card.Text>Price: {product_price}</Card.Text>
-        <Button variant="primary" onClick={handleCard}>Add to Cart</Button>
-      </Card.Body>
-    </Card>
-  );
-};
+// import "../Product/Product/product.css";
+import ProductCard from "./ProductCard/ProductCard";
 
 const ProductSlider = ({ products }) => {
   const responsive = {
@@ -83,16 +28,24 @@ const ProductSlider = ({ products }) => {
       items: 5,
     },
   };
+  const card={
+    height:"calc(100% - 15px)",
+    marginBottom: "15px"
+}
   return (
-    <div className="product-slider">
+    <>
       <Carousel responsive={responsive}>
         {products.map((product) => (
-          <Link key={product.id} style={{"textDecoration": "none"}} to={`/product/${product.id}`}>
-          <ProductCard  product={product} />
+          <Link
+            key={product.id}
+            style={{ textDecoration: "none" }}
+            to={`/product/${product.id}`}
+          >
+            <ProductCard product={product} />
           </Link>
         ))}
       </Carousel>
-    </div>
+    </>
   );
 };
 

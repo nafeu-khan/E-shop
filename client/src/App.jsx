@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 
-import Home from "./pages/Home";
+import Home from "./pages/Home/Home";
 import Account from "./pages/Account";
 import Error from "./pages/error";
 import Shop from "./pages/Shop";
@@ -18,7 +18,7 @@ import { ToastContainer } from "react-toastify";
 import CreateCategory from "./pages/admin/CreateCategory";
 import Logout from "./pages/user/logout";
 import ProtectedAc from "./components/ProtectedAc";
-import Product from "./components/Product/Product";
+import Product from "./components/Product/Product/Product";
 import Cart from "./components/cart/Cart";
 function App() {
   const [isLoggedIn, setisLoggedIn] = useState(

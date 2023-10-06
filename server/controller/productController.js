@@ -3,11 +3,26 @@ const { v4: uuidv4 } = require("uuid");
 const bcrypt = require("bcrypt");
 const path = require("path");
 
+const getFeatured = async (req, res) => {
+  try {
+    const featuredProducts = await pool.query(
+      "SELECT * FROM products WHERE featured = true");
+  
+    res.status(200).json({
+      message: "Featured products fetched successfully",
+      data: featuredProducts.rows,
+    });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+  
+};
 const updateCart = async (req, res) => {
   try {
     const { userid, product_id, quantity } = req.body;
-    const query = "UPDATE product_cart SET quantity = quantity + $1 WHERE product_cart.user_id = $2 AND product_cart.product_id =$3";
-    await pool.query(query, [quantity,userid,product_id]);
+    const query =
+      "UPDATE product_cart SET quantity = quantity + $1 WHERE product_cart.user_id = $2 AND product_cart.product_id =$3";
+    await pool.query(query, [quantity, userid, product_id]);
     res
       .status(200)
       .send({ message: "Product Added to cart", data: postdata.rows });
@@ -40,12 +55,10 @@ const getFromCart = async (req, res) => {
            WHERE product_cart.user_id = $1`,
       [userid]
     );
-    res
-      .status(200)
-      .json({
-        message: "Cart products fetched successfully",
-        data: cartProducts.rows,
-      });
+    res.status(200).json({
+      message: "Cart products fetched successfully",
+      data: cartProducts.rows,
+    });
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
@@ -171,4 +184,5 @@ module.exports = {
   getFromCart,
   removeFromCart,
   updateCart,
+  getFeatured,
 };

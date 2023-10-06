@@ -36,11 +36,19 @@ const CreateProduct = () => {
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     if (name === "product_name") {
-      const productSlug = value.trim().replace(/\s+/g, "-");
+      const productSlug = value.trim().replace(/\s+/g, "-").toLowerCase();
       setProduct({
         ...product,
         [name]: value,
         product_slug: productSlug,
+      });
+    }
+    else if (name === "product_price") {
+      const Price = value.replace(/,/g, "");
+      setProduct({
+        ...product,
+        [name]: value,
+        product_price: Price,
       });
     } else
       setProduct((prevstate) => {
