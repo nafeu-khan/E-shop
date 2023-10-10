@@ -21,16 +21,16 @@ const Shop = () => {
   return (
     <>
       {categories.map((category) => {
-        const filteredProducts = productList.filter((product) => product.product_category === category.category_name);
+        const filteredProducts = productList.filter((product) => product.product_category === category.category_name)
         return (
           <div key={category.id}>
             <h2>{category.category_name}</h2>
             <ProductSlider products={filteredProducts} />
           </div>
-        );
+        )
         })}
     </>
-  );
+  ) 
 }
 
 export default Shop

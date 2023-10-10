@@ -2,6 +2,7 @@ const bodyParser = require("body-parser");
 const express = require("express");
 const morgan = require("morgan");
 const user_routers = require("../routers/user_routers");
+const orders_router =require("../routers/orders_router")
 const cors = require("cors");
 const product_routers = require("../routers/product_routers");
 const app = express();
@@ -23,6 +24,8 @@ app.use(
 app.use('/upload', express.static('upload'));
 app.use("/api/user", user_routers);
 app.use("/api/product", product_routers);
+app.use("/api/orders", orders_router);
+
 app.get("/", (req, res) => {
   res.send({
     message: "hi",

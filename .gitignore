@@ -9,3 +9,4 @@ client/.vscode
 server/.vscode
 client/.idea
 server/.idea
+.gitignore

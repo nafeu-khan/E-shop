@@ -10,16 +10,22 @@ const Dashboard = () => {
         <div className="d-flex justify-content-between">
           <Link
             to="/admin/create_product"
-            className="btn btn-primary btn-lg mr-2"
+            className="btn btn-success btn-lg mr-2"
           >
             Create Product
           </Link>
           <Link to="/admin/create_category" className="btn btn-success btn-lg">
             Create Category
           </Link>
-          <Link to="/admin/create_category" className="btn btn-success btn-lg">
-            Select Featured Product
+          <Link to="/admin/orders" className="btn btn-success btn-lg">
+            Show Orders
           </Link>
+          </div>
+          <br/>
+          <div className="d-flex justify-content-between">
+           {/* <Link to="/admin/featured-product" className="btn btn-success btn-lg">
+            Select Featured Product
+          </Link> */}
         </div>
       </div>
     </>

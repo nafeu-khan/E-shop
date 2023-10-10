@@ -20,6 +20,9 @@ import Logout from "./pages/user/logout";
 import ProtectedAc from "./components/ProtectedAc";
 import Product from "./components/Product/Product/Product";
 import Cart from "./components/cart/Cart";
+import Checkout from "./pages/Checkout";
+import Orders from "./pages/admin/Orders";
+import Featured_product from "./pages/admin/Featured_product";
 function App() {
   const [isLoggedIn, setisLoggedIn] = useState(
     localStorage.getItem("isLoggedIn")
@@ -47,6 +50,7 @@ function App() {
           <Route path="/product/:product_id" element={<Product/>}/>
           <Route path="/register" element={<Register/>} />
           <Route path="/cart" element={< Cart/>} />
+          <Route path="/checkout" element={< Checkout/>} />
           <Route
             path="/account/*"
             element={
@@ -65,6 +69,8 @@ function App() {
                 <Routes>
                   <Route path="/dashboard" element={<Dashboard />} />
                   <Route path="/create_product" element={<CreateProduct />} />
+                  <Route path="/featured-product" element={<Featured_product />} />
+                  <Route path="/orders" element={< Orders/>} />
                   <Route path="/create_category" element={<CreateCategory />} />
                 </Routes>
               </Protected>

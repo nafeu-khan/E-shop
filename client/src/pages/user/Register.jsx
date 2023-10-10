@@ -59,6 +59,7 @@ export const Register = () => {
               id="name"
               value={user.name}
               onChange={handleInputChange}
+              required
             />
           </div>
           <div className="form-control">
@@ -69,6 +70,7 @@ export const Register = () => {
               id="email"
               value={user.email}
               onChange={handleInputChange}
+              required
             />
           </div>
           <div className="form-control">
@@ -79,6 +81,7 @@ export const Register = () => {
               id="password"
               value={user.password}
               onChange={handleInputChange}
+              required
             />
           </div>
           <div className="form-control">
@@ -88,6 +91,7 @@ export const Register = () => {
               id="address"
               value={user.address}
               onChange={handleInputChange}
+              required
             />
           </div>
           <div className="form-control">
@@ -97,11 +101,12 @@ export const Register = () => {
               id="phone"
               value={user.phone}
               onChange={handleInputChange}
+              required
             />
           </div>
 
           <div className="form-control">
-            <button type="submit" className="btn">
+            <button type="submit" className="btn btn-primary">
               Register
             </button>
           </div>

@@ -77,6 +77,9 @@ const Product = () => {
             <p>
               <strong>Status:</strong> {product.product_status}
             </p>
+            <p>
+              <strong>Price:</strong> {product.product_price}
+            </p>
             <Button variant="primary" onClick={handleCard}>
               Add to Cart
             </Button>
@@ -86,9 +89,6 @@ const Product = () => {
             </p>
             <p>
               <strong>Description:</strong> {product.product_description}
-            </p>
-            <p>
-              <strong>Price:</strong> {product.product_price}
             </p>
             <Badge variant="primary">{product.product_slug}</Badge>
           </Col>

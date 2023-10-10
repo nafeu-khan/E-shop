@@ -1,5 +1,8 @@
 CREATE DATABASES; 
 
+TABLE  users  product_categories products  product_cart orders order_products
+
+    
 CREATE TABLE users(
     id varchar (255)   PRIMARY KEY,
     username varchar(20) ,
@@ -8,10 +11,6 @@ CREATE TABLE users(
     address varchar(50),
     phone varchar (15)
 );
-
-INSERT INTO users(id, username ,email ,password ,address ,phone) values ($1,$2,$3,$4,$5,$6)
-
-	
 
 CREATE TABLE products(
     id	varchar (255)   PRIMARY KEY,
@@ -25,7 +24,6 @@ CREATE TABLE products(
     created_at timestamp DEFAULT current_timestamp,
     updated_at timestamp DEFAULT current_timestamp
 );
-
 
 CREATE TABLE product_categories(
     id	varchar (255)   PRIMARY KEY,
@@ -50,6 +48,7 @@ CREATE TABLE order_products(
     id	varchar (255)  PRIMARY KEY,
     order_id	varchar (255),
     product_id	varchar (255),
+    quantity int ,
     product_price	numeric(10, 2),
     created_at	timestamp DEFAULT current_timestamp,
     updated_at	timestamp DEFAULT current_timestamp
@@ -62,5 +61,3 @@ CREATE TABLE product_cart(
     created_at	timestamp DEFAULT current_timestamp,
     updated_at	timestamp DEFAULT current_timestamp
 );
-
-
